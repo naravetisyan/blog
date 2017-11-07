@@ -101,15 +101,4 @@ class LoginController extends Controller
             return redirect('home');
         }
     }
-
-    // public function redirectToProvider()
-    // {
-    //     return Socialite::driver('facebook')->redirect();
-    // }
-
-    // public function handleProviderCallback()
-    // {
-    //     $user = Socialite::driver('facebook')->user();
-    // }
-
 }
