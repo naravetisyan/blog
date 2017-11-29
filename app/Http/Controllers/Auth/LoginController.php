@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,7 +52,6 @@ class LoginController extends Controller
      */
     public function handleGoogleProviderCallback()
     {
-
         $SocialUser =  Socialite::driver('google')->stateless()->user();
         $findUser = User::where('email', $SocialUser->email)->first();
         if($findUser){
@@ -84,13 +83,11 @@ class LoginController extends Controller
      */
     public function handleFacebookProviderCallback()
     {
-
         $SocialUser =  Socialite::driver('facebook')->user();
         $findUser = User::where('email', $SocialUser->email)->first();
         if ($findUser) {
             Auth::login($findUser);
             return redirect('home');
-
         } else {
             $user = new User;
             $user->name=$SocialUser->name;

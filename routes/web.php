@@ -12,11 +12,10 @@
 */
 
 Auth::routes();
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
 
-Route::resource('/category', 'CategoryController');
-Route::resource('/post', 'PostController');
+Route::get('/', 'HomeController@index');
+Route::resource('/categories', 'CategoriesController');
+Route::resource('/posts', 'PostsController', ['except' => ['show']]);
 
 Route::get('login/google', 'Auth\LoginController@redirectToGoogleProvider');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleProviderCallback');
@@ -24,7 +23,6 @@ Route::get('login/google/callback', 'Auth\LoginController@handleGoogleProviderCa
 Route::get('login/facebook', 'Auth\LoginController@redirectToFacebookProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookProviderCallback');
 
- 
-
-// Route::get('/redirect', 'SocialAuthController@redirect');
-// Route::get('/callback', 'SocialAuthController@callback');
+Route::get('/{url_n}', function () {
+    return redirect('/');
+});

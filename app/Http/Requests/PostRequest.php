@@ -11,14 +11,12 @@ class PostRequest extends FormRequest
 	    return true;
 	}
 
-	 
     public function rules()
     {
         return [
             'post_title' => 'required|max:255',
             'text' => 'required',
-            'cat_name' => 'required|max:255',
-            //'image' => 'required|image|mimes:jpeg,jpg,bnp,png|between:0,5000'
+            'cat_name' => 'required|max:255'
         ];
     }
 

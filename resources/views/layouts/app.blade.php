@@ -14,16 +14,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     {{-- <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script> --}}
 
-<script src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1"></script>
+<!-- <script src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1"></script> -->
 
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-   {{--  <script>
+<!--     <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '122818845074651',
@@ -46,7 +46,7 @@
         });
 
         }
-</script> --}}
+</script>  -->
 {{--     <div
   class="fb-like"
   data-share="true"

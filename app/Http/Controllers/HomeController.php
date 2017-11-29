@@ -30,9 +30,13 @@ class HomeController extends Controller
         $category = Category::all();
         $post = Post::paginate(4);
         $my_categories = Category::where('user_id', $user->id)->get();
-        //dd($category[0]->user->id);
         $my_posts = Post::where('user_id', $user->id)->get();
-        return view('home', ['user' => $user, 'category'=>$category, 'post'=>$post, 'my_categories' => 
-            $my_categories, 'my_posts' => $my_posts ]);
+        return view('home')->with([
+                                    'user' => $user,
+                                    'category'=>$category,
+                                    'post'=>$post, 
+                                    'my_categories' => $my_categories,
+                                    'my_posts' => $my_posts 
+                                ]); 
     }
 }
