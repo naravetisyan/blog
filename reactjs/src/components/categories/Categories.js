@@ -47,8 +47,8 @@ export default class Categories extends Component {
 				<h3>Categories</h3>
 				<div className="list-group">
 					{	
-					this.state.categories.map((value, index) => {
-						return <a className = "list-group-item cat_list" key={index}>{value.title}</a>	})
+						this.state.categories.map((value, index) => {
+							return <a className = "list-group-item cat_list" key={index}>{value.title}</a>	})
 					}
 				</div>
 			</div>

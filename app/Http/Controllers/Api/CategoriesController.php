@@ -33,6 +33,10 @@ class CategoriesController extends Controller
         $inputs['user_id'] = $user->id;
         if ($category = $category->create($inputs)) {
             return response()->json(['added_category' => $inputs], 200);
+        }       
+        else {
+            return response()->json(['added_category' => 'Something went wrong!']);
+
         }
     }
 
@@ -43,6 +47,10 @@ class CategoriesController extends Controller
         $categories_new_name = Category::where('id', $id)->get();
         if ($result) {
             return response()->json(['msg' => $categories_new_name]);
+        }
+        else {
+            return response()->json(['msg' => 'Something went wrong!']);
+
         }
     }
 

@@ -52,7 +52,6 @@ export default class Register extends Component{
 	}
     render() {
         return (
-			    
 			<div className="container">
 				<label><b>Name</b></label>
 				<input type="text" placeholder="Enter Name" value={this.state.name} onChange={this.handleChangeName} name="name" required/>
@@ -71,8 +70,7 @@ export default class Register extends Component{
 					<button type="button" className="cancelbtn">Cancel</button>
 					<button type="submit" onClick={this.handleSubmit} className="signupbtn">Sign Up</button>
 				</div>
-			</div>
-			    
+			</div>    
 		)
 	}
 }

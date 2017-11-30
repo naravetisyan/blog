@@ -35322,11 +35322,8 @@ var MyPosts = function (_Component) {
 		value: function editPost(post) {
 			var posts = this.state.posts;
 			posts.map(function (val, index) {
-				if (val.id == post.post_id) {
-					val.title = post.post_title;
-					val.text = post.text;
-					val.category_id = post.cat_name;
-					val.image = post.image;
+				if (val.id == post.id) {
+					val = post;
 				}
 			});
 			this.setState({ posts: posts });
@@ -35625,7 +35622,7 @@ var AddPostModal = function (_Component) {
                                     'Add Post'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'exampleInputEmail1', placeholder: 'Post',
-                                    value: this.props.post_name, onChange: this.props.get_post_name }),
+                                    value: this.props.post_name, onChange: this.props.get_post_name, required: true }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'textarea',
                                     { value: this.props.post_text, onChange: this.props.get_post_text },
@@ -36300,16 +36297,16 @@ var EditPost = function (_Component) {
 
             e.preventDefault();
             var data = new FormData();
-            data.append('post_title', this.state.post_name);
+            data.append('title', this.state.post_name);
             data.append('text', this.state.post_text);
-            data.append('cat_name', this.state.selected_cat);
+            data.append('category_id', this.state.selected_cat);
             data.append('image', this.state.image);
-            data.append('post_id', this.props.id);
+            data.append('id', this.props.id);
             data.append('_method', "PUT");
 
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/edit_post/' + this.props.id, data).then(function (response) {
                 _this2.setState({ new_post: response.data.edited_post });
-                _this2.props.editPost(_this2.state.new_post);
+                _this2.props.editPost(response.data.edited_post);
             });
         }
     }, {

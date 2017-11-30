@@ -17,7 +17,6 @@ class CategoriesController extends Controller
     {   
         $categories = Category::where('user_id', Auth::user()->id)->get();
         return view('/categories/index', ['categories' =>$categories ]); 
-    
     }
 
     public function create()
@@ -33,6 +32,9 @@ class CategoriesController extends Controller
         if ($category->create($inputs)) {
             return redirect()->back()->with(['msg' => 'Your Category created!']);
         }
+        else {
+            return redirect()->back()->with(['msg' => 'Something went wrong!']);
+        }
     }
     
     public function edit($id)
@@ -47,6 +49,9 @@ class CategoriesController extends Controller
         $result = Category::where('id', $id)->update($inputs);
         if ($result) {
             return redirect()->back()->with(['msg' => 'Your Category Updated!']);
+        }
+        else {
+            return redirect()->back()->with(['msg' => 'Something went wrong!']);
         }
     }
 

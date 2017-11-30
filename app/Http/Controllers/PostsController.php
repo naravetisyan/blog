@@ -37,15 +37,17 @@ class PostsController extends Controller
             $image->move($path, $image_name);
         }
         $inputs = [
-                'title' => $request->post_title,
-                'text' => $request->text,
-                'category_id' => $request->cat_name,
-                'user_id' => $user->id,
-                'image' => $image = isset($image_name) ? $image_name : $default_image
+            'title' => $request->post_title,
+            'text' => $request->text,
+            'category_id' => $request->cat_name,
+            'user_id' => $user->id,
+            'image' => $image = isset($image_name) ? $image_name : $default_image
         ];
-        if ($post->create($inputs)
-        ) {
+        if ($post->create($inputs)) {
             return redirect()->back()->with(['msg' => 'Your Post created!']);
+        }
+        else {
+            return redirect()->back()->with(['msg' => 'Something went wrong!']);
         }
     }
 
@@ -78,9 +80,11 @@ class PostsController extends Controller
             $image_name = $post->image;
         }
         $inputs['image'] = $image_name;
-        $result = Post::where('id', $id)->update($inputs);
-        if ($result) {
+        if ($result = Post::where('id', $id)->update($inputs)) {
             return redirect()->back()->with(['msg' => 'Your Post Updated!']);
+        }
+        else {
+            return redirect()->back()->with(['msg' => 'Something went wrong!']);
         }
     }
 

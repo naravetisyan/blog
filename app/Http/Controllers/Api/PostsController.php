@@ -12,6 +12,7 @@ use File;
 
 class PostsController extends Controller
 {
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,6 +23,7 @@ class PostsController extends Controller
         $all_posts = Post::with('category')->get();
         return response()->json(['posts' => $all_posts], 200);
     }
+
     public function users_posts()
     {   
         $users_posts = Post::where('user_id', Auth::user()->id)->with('category')->get();
@@ -48,6 +50,10 @@ class PostsController extends Controller
             $inputs['category'] = Category::where('id', $request->cat_name)->get();
             return response()->json(['added_post' => $inputs]);
         }
+        else {
+            return response()->json(['added_post' => 'Something went wrong!']);
+
+        }
     }
 
     public function edit($id)
@@ -67,16 +73,15 @@ class PostsController extends Controller
             $image_name = time().'.'.$image->getClientOriginalExtension();
             $image->move($path, $image_name);
         }
-        $inputs= [
-            'title' => $request->post_title, 
-            'text' => $request->text,
-            'category_id' => $request->cat_name,
-            'image' => $image_name,
-            'user_id' => $user->id
-        ];
-        if ($result = $post->update($inputs)) {
-            $inputs['category'] = Category::where('id', $request->cat_name)->get();
+        $inputs = $request->except('_method');
+        $inputs['image'] = $image_name;
+        if($result = $post->update($inputs)) {
+            $inputs['category'] = Category::where('id', $request->category_id)->get();
             return response()->json(['edited_post' => $inputs]);
+        }
+        else {
+            return response()->json(['edited_post' => 'Something went wrong!']);
+
         }
     }
 

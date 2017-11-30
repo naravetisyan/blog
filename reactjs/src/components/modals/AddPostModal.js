@@ -11,10 +11,10 @@ export default class AddPostModal extends Component {
                             <div className="modal-body">
                                 <label htmlFor="exampleInputEmail1">Add Post</label>
                                 <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Post"
-                                value={this.props.post_name} onChange={this.props.get_post_name}/>
+                                value={this.props.post_name} onChange={this.props.get_post_name} required/>
                                 <textarea value={this.props.post_text} onChange={this.props.get_post_text}> </textarea>
                                 <select onChange={this.props.changeSelect} value={this.props.selected_category}>
-                                        <option></option>
+                                    <option></option>
                                     {
                                         this.props.show_categories.map((val, index) => { 
                                             return (

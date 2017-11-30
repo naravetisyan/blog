@@ -38,16 +38,16 @@ export default class EditPost extends Component {
     submitForm(e) {
         e.preventDefault();
         let data = new FormData();
-        data.append('post_title', this.state.post_name);
+        data.append('title', this.state.post_name);
         data.append('text', this.state.post_text);
-        data.append('cat_name', this.state.selected_cat);
+        data.append('category_id', this.state.selected_cat);
         data.append('image', this.state.image);
-        data.append('post_id', this.props.id);
+        data.append('id', this.props.id);
         data.append('_method', "PUT");
         
         axios.post('/api/edit_post/'+ this.props.id, data).then((response) => {
             this.setState({new_post: response.data.edited_post})
-            this.props.editPost(this.state.new_post); 
+            this.props.editPost(response.data.edited_post); 
         });
     }
     componentWillMount(){

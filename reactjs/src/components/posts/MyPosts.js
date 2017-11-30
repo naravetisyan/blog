@@ -26,14 +26,11 @@ export default class MyPosts extends Component {
     editPost(post) {
     	let posts = this.state.posts;
     	posts.map((val,index) => {
-    		if(val.id == post.post_id){
-    			val.title = post.post_title;
-    			val.text = post.text;
-    			val.category_id = post.cat_name;
-    			val.image = post.image;
+    		if(val.id == post.id){
+    			val = post;
     		}
     	})
-    	this.setState({posts});
+		this.setState({posts});
     }
     deletePost(post) {
     	let posts = this.state.posts;
