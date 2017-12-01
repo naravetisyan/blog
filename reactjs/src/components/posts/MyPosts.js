@@ -6,7 +6,6 @@ import AddPost from "./AddPost";
 import EditPost from "./EditPost";
 import DeletePost from "./DeletePost";
 
-
 export default class MyPosts extends Component {
     constructor(props){
         super(props);

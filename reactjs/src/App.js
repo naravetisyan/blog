@@ -52,7 +52,6 @@ export default class App extends Component {
         let categories
         let login
         if(sessionStorage.getItem('id')) {
-        this.setState({user_id: sessionStorage.getItem('id')})
             categories = (
                 <Categories 
                     added_category= {this.state.added_category} 

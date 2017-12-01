@@ -6,10 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CategoryRequest extends FormRequest
 {
-	public function authorize()
-	{
-	    return true;
-	}
+    public function authorize()
+    {
+        return true;
+    }
 
     public function rules()
     {
@@ -18,8 +18,8 @@ class CategoryRequest extends FormRequest
         ];
     }
 
-   	public function messages()
-   	{
+    public function messages()
+    {
         return [
             'title.required' => 'The category name field is required.'
         ];

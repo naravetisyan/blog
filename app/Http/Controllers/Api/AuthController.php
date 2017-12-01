@@ -24,7 +24,7 @@ class AuthController extends Controller
             Auth::login($user);
             return response()->json(['user' => Auth::user()],200);
         }
-        return $this->sendFailedLoginResponse($request);
+            return $this->sendFailedLoginResponse($request);
     }
     
     public function logout(){

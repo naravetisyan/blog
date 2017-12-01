@@ -6,10 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PostRequest extends FormRequest
 {
-	public function authorize()
-	{
-	    return true;
-	}
+    public function authorize()
+    {
+        return true;
+    }
 
     public function rules()
     {
@@ -20,8 +20,8 @@ class PostRequest extends FormRequest
         ];
     }
 
-   	public function messages()
-   	{
+    public function messages()
+    {
         return [
             'title.required' => 'Post Title field is required!',
             'text.required' => 'Text Field is required!',

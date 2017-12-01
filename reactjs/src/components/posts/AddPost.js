@@ -72,7 +72,7 @@ export default class AddPost extends Component {
                     changeSelect={this.changeSelect}
                     selected_category={this.state.selected_category}
                 />
-            </div>          
+            </div>
         );
     }
 }

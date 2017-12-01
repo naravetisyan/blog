@@ -15,15 +15,15 @@ export default class MyCategories extends Component {
         this.deleteCategory = this.deleteCategory.bind(this);
         this.editCategory = this.editCategory.bind(this);
         this.addCategory = this.addCategory.bind(this);
-	}
-	addCategory(category){
-    	let my_categories = this.state.my_categories;
+    }
+    addCategory(category){
+        let my_categories = this.state.my_categories;
         my_categories.push(category);
         this.setState({ my_categories});
         this.props.addCategory(category);
-	}
+    }
     deleteCategory(category){
-    	let my_categories = this.state.my_categories;
+        let my_categories = this.state.my_categories;
         my_categories.map((value,index) => {
             if(value.id == category){
                 my_categories.splice(index,1);
@@ -33,31 +33,31 @@ export default class MyCategories extends Component {
         this.props.deleteCategory(category);
     }
     editCategory(category){
-    	let my_categories = this.state.my_categories;
-    	my_categories.map((val,index) => {
-    		if(val.id == category.id){
-    			val.title = category.title;
-    		}
-    	})
-    	this.setState({my_categories});
-    	this.props.editCategory(category);
+        let my_categories = this.state.my_categories;
+        my_categories.map((val,index) => {
+            if(val.id == category.id){
+                val.title = category.title;
+            }
+        })
+        this.setState({my_categories});
+        this.props.editCategory(category);
     }
-	componentWillMount(){
-		let url = '/api/me/categories';
-		axios.get(url).then((response) => {
+    componentWillMount(){
+        let url = '/api/me/categories';
+        axios.get(url).then((response) => {
             this.setState({
-				my_categories: response.data.my_categories
-			})
-		});
-	}
-  	render() {
+                my_categories: response.data.my_categories
+            })
+        });
+    }
+    render() {
         return (
-			<div className="cat-all">
-				<h3>My Categories</h3>
-				<div className="list-group">
-				{	
-    				this.state.my_categories.map((value, index) => {
-    					return (
+            <div className="cat-all">
+                <h3>My Categories</h3>
+                <div className="list-group">
+                {   
+                    this.state.my_categories.map((value, index) => {
+                        return (
                             <div key={index} className='div'>
                                 <div className='cat-name'><Link to={'#'}  className="list-group-item" >{value.title}</Link></div>
                                 <DeleteCategories  
@@ -71,14 +71,14 @@ export default class MyCategories extends Component {
                                 />
                             </div>
                                 );
-    				    })
-				}
-				</div>
-				<AddCategories
-					submitForm={this.submitForm} 
+                        })
+                }
+                </div>
+                <AddCategories
+                    submitForm={this.submitForm} 
                     addCategory={this.addCategory}
-				/>
-			</div>
-    	)
+                />
+            </div>
+        )
     }
 }

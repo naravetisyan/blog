@@ -32,7 +32,7 @@ export default class EditPostModal extends Component {
                         </div>
                     </div>
                 </div>
-            </div>          
+            </div>
         );
     }
 }
