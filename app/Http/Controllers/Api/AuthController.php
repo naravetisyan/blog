@@ -23,14 +23,12 @@ class AuthController extends Controller
             $user = $user->where('email', $request->get("email"))->first();
             Auth::login($user);
             return response()->json(['user' => Auth::user()],200);
-        } else {
-            return $this->sendFailedLoginResponse($request);
         }
+        return $this->sendFailedLoginResponse($request);
     }
     
     public function logout(){
         Auth::logout();
-        return response()->json("Bye", 200);
     }  
 
     protected function validator(Request $request)

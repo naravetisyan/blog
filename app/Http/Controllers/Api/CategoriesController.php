@@ -29,7 +29,6 @@ class CategoriesController extends Controller
     {
         $user = Auth::user();
         $inputs = $request->only('title');
-        $inputs['user_id'] = $user->id;
         if ($category = $category->create($inputs)) {
             return response()->json(['added_category' => $inputs], 200);
         }

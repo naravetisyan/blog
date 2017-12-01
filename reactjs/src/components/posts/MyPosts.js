@@ -55,7 +55,7 @@ export default class MyPosts extends Component {
 			<div className="my-posts-all">
 				<h3>My Posts</h3>
 				<div className="list-group">
-					<AddPost addPost={this.addPost}/>
+					<AddPost user_id={this.props.user_id} addPost={this.addPost}/>
 					{	
 						posts.map((value, index) => {
 							let src = "../images/"+value.image;

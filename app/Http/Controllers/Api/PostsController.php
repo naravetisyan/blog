@@ -27,7 +27,7 @@ class PostsController extends Controller
         return response()->json(['my_posts' => $users_posts], 200);
     }
 
-    public function store(PostRequest $request)
+    public function store(PostRequest $request, Post $post)
     {   
         $inputs = $request->except('image');
         $default_image = 'empty.jpeg';
@@ -37,7 +37,6 @@ class PostsController extends Controller
             $image->move($path, $image_name);
         }
         $inputs['image'] = $image_name ? $image_name : $default_image;
-        $inputs['user_id'] = Auth::id();
         if ($post->create($inputs)) {
             $inputs['category'] = Category::where('id', $request->category_id)->get();
             return response()->json(['added_post' => $inputs]);
@@ -55,7 +54,6 @@ class PostsController extends Controller
     public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
-        $user = Auth::user();
         $image_name = 'empty.jpg';
         if ($image =  $request->file('image')) {
             $path = public_path('/images');

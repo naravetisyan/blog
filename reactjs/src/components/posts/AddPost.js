@@ -41,6 +41,7 @@ export default class AddPost extends Component {
         data.append('text', this.state.post_text);
         data.append('category_id', this.state.selected_category);
         data.append('image', this.state.image);
+        data.append('user_id', this.props.user_id);
         
         axios.post('/api/me/posts', data).then((response) => {
             this.setState({new_post: response.data.added_post})

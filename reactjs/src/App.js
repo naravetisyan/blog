@@ -19,6 +19,7 @@ export default class App extends Component {
             name: '',
             category: '',
             categories: [],
+            user_id: ''
         }
         this.addCategory = this.addCategory.bind(this);
         this.editCategory = this.editCategory.bind(this);
@@ -51,6 +52,7 @@ export default class App extends Component {
         let categories
         let login
         if(sessionStorage.getItem('id')) {
+        this.setState({user_id: sessionStorage.getItem('id')})
             categories = (
                 <Categories 
                     added_category= {this.state.added_category} 
@@ -85,6 +87,7 @@ export default class App extends Component {
                                                         /> 
                                                     }/>
                     <Route exact path='/me/posts' render={ () => <MyPosts
+                                                        user_id={this.state.user_id}
                                                         addPost={this.addPost} 
                                                         editPost={this.editPost} 
                                                         deletePost={this.deletePost} 

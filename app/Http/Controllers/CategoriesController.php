@@ -27,7 +27,6 @@ class CategoriesController extends Controller
     {
         $user = Auth::user();
         $inputs = $request->only('title');
-        $inputs['user_id'] = $user->id;
         if ($category->create($inputs)) {
             return redirect()->back()->with(['msg' => 'Your Category created!']);
         }
