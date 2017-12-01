@@ -14,7 +14,7 @@ export default class Register extends Component{
 	    this.handleChangeName = this.handleChangeName.bind(this);
 	    this.handleChangeEmail = this.handleChangeEmail.bind(this);
 	    this.handleChangePass = this.handleChangePass.bind(this);
-	    this.handleChangeConfirm_pass = this.handleChangeConfirm_pass.bind(this);
+	    this.handleChangeConfirmPass = this.handleChangeConfirmPass.bind(this);
 	    this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleChangeName(e) {
@@ -32,7 +32,7 @@ export default class Register extends Component{
 			password: e.target.value
 		})
 	}
-	handleChangeConfirm_pass(e) {
+	handleChangeConfirmPass(e) {
 		this.setState({
 			password_confirmation: e.target.value
 		})
@@ -63,7 +63,7 @@ export default class Register extends Component{
 				<input type="password" placeholder="Enter Password" value={this.state.password} onChange={this.handleChangePass} name="password" required/>
 
 				<label><b>Repeat Password</b></label>
-				<input type="password" placeholder="Repeat Password" value={this.state.password_confirmation} onChange={this.handleChangeConfirm_pass} name="password_confirmation" required/>
+				<input type="password" placeholder="Repeat Password" value={this.state.password_confirmation} onChange={this.handleChangeConfirmPass} name="password_confirmation" required/>
 				<input type="checkbox"/> Remember me
 
 				<div className="clearfix">

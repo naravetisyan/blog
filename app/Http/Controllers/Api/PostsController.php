@@ -3,12 +3,9 @@ namespace App\Http\Controllers\Api;
 
 use Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use \App\Http\Requests\PostRequest;
-use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
-use File;
 
 class PostsController extends Controller
 {
@@ -18,42 +15,34 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
-    public function all_posts()
+    public function allPosts()
     {
         $all_posts = Post::with('category')->get();
         return response()->json(['posts' => $all_posts], 200);
     }
 
-    public function users_posts()
+    public function usersPosts()
     {   
         $users_posts = Post::where('user_id', Auth::user()->id)->with('category')->get();
         return response()->json(['my_posts' => $users_posts], 200);
     }
 
-    public function store(PostRequest $request, Post $post)
+    public function store(PostRequest $request)
     {   
-        $user = Auth::user();
-        $image_name = 'empty.jpg';
+        $inputs = $request->except('image');
+        $default_image = 'empty.jpeg';
+        $path = public_path('/images');
         if ($image =  $request->file('image')) {
-            $path = public_path('/images');
             $image_name = time().'.'.$image->getClientOriginalExtension();
             $image->move($path, $image_name);
         }
-        $inputs= [
-            'title' => $request->post_title, 
-            'text' => $request->text,
-            'category_id' => $request->cat_name, 
-            'user_id' => $user->id, 
-            'image' => $image_name
-        ];
-        if ($post = $post->create($inputs)) {
-            $inputs['category'] = Category::where('id', $request->cat_name)->get();
+        $inputs['image'] = $image_name ? $image_name : $default_image;
+        $inputs['user_id'] = Auth::id();
+        if ($post->create($inputs)) {
+            $inputs['category'] = Category::where('id', $request->category_id)->get();
             return response()->json(['added_post' => $inputs]);
         }
-        else {
-            return response()->json(['added_post' => 'Something went wrong!']);
-
-        }
+        return response()->json(['error' => 'Something went wrong!']);
     }
 
     public function edit($id)
@@ -63,7 +52,7 @@ class PostsController extends Controller
         return response()->json(['post' =>$post,'categories'=> $categories ]); 
     }
 
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
         $user = Auth::user();
@@ -79,10 +68,7 @@ class PostsController extends Controller
             $inputs['category'] = Category::where('id', $request->category_id)->get();
             return response()->json(['edited_post' => $inputs]);
         }
-        else {
-            return response()->json(['edited_post' => 'Something went wrong!']);
-
-        }
+        return response()->json(['error' => 'Something went wrong!']);
     }
 
     public function destroy($id)

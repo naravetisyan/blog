@@ -29015,33 +29015,33 @@ var App = function (_Component) {
 
     _createClass(App, [{
         key: 'addCategory',
-        value: function addCategory(ekac_category) {
-            this.setState({ added_category: ekac_category });
+        value: function addCategory(added_category) {
+            this.setState({ added_category: added_category });
         }
     }, {
         key: 'editCategory',
-        value: function editCategory(ekac_category) {
-            this.setState({ edited_category: ekac_category });
+        value: function editCategory(edited_category) {
+            this.setState({ edited_category: edited_category });
         }
     }, {
         key: 'deleteCategory',
-        value: function deleteCategory(ekac_category) {
-            this.setState({ deleted_category: ekac_category });
+        value: function deleteCategory(deleted_category) {
+            this.setState({ deleted_category: deleted_category });
         }
     }, {
         key: 'addPost',
-        value: function addPost(ekac_post) {
-            this.setState({ added_post: ekac_post });
+        value: function addPost(added_post) {
+            this.setState({ added_post: added_post });
         }
     }, {
         key: 'editPost',
-        value: function editPost(ekac_post) {
-            this.setState({ edited_post: ekac_post });
+        value: function editPost(edited_post) {
+            this.setState({ edited_post: edited_post });
         }
     }, {
         key: 'deletePost',
-        value: function deletePost(ekac_post) {
-            this.setState({ deleted_post: ekac_post });
+        value: function deletePost(deleted_post) {
+            this.setState({ deleted_post: deleted_post });
         }
     }, {
         key: 'render',
@@ -29052,8 +29052,8 @@ var App = function (_Component) {
             var login = void 0;
             if (sessionStorage.getItem('id')) {
                 categories = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_categories_Categories__["a" /* default */], {
-                    deleted_category: this.state.deleted_category,
                     added_category: this.state.added_category,
+                    deleted_category: this.state.deleted_category,
                     edited_category: this.state.edited_category
                 });
             }
@@ -33514,7 +33514,7 @@ exports = module.exports = __webpack_require__(106)(undefined);
 
 
 // module
-exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n\ninput[type=text], input[type=password] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box;\n}\n\n/* Set a style for all buttons */\nbutton {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%;\n}\n\n/* Extra styles for the cancel button */\n.cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336;\n}\n\n/* Float cancel and signup buttons and add an equal width */\n.cancelbtn,.signupbtn {\n    float: left;\n    width: 50%;\n}\n\n/* Add padding to container elements */\n.container {\n    padding: 16px;\n}\n\n/* Clear floats */\n.clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table;\n}\n\n/* Change styles for cancel button and signup button on extra small screens */\n@media screen and (max-width: 300px) {\n    .cancelbtn, .signupbtn {\n       width: 100%;\n    }\n}\n\n.cat_list {\n  width: 200px;\n}\n.cat_delete {\n  height: 0;\n}\n.cat_all {\n  width: 200px;\n  text-align: center;\n  float: left;\n  margin: 0px 20px 20px 20px;\n}\n\n.add_something {\n  width: 120px;\n  float: right; \n  margin-right: 75px;\n}\n#inputik {\n  width: 200px;\n}\n.del_icon {\n  position: relative;\n  bottom: 31px;\n  left: 82px;\n  width: 13px;\n}\n.edit_icon {\n  position: relative;\n  bottom: 31px;\n  left: 64px;\n  width: 14px;\n}\n.del_icon:hover {\n  background: black;\n  cursor: pointer;\n}\n.edit_icon:hover {\n  background: black;\n  cursor: pointer;\n}\n.edit_post_icon {\n  position: relative;\n  bottom: 31px;\n  transition: 0.25s;\n  left: 64px;\n  width: 12px;\n}\n.edit_post_icon:hover {\n  width: 18px;\n  cursor: pointer;\n  -webkit-transform: rotate(360deg);\n  transform: rotate(360deg);\n}\n#mine {\n  height: 250px;\n  float: left;\n  margin-bottom: 75px;\n}\n.thumbnail>img {\n    margin: 0!important;\n}\n.span6{\n  float: left;\n  width: 276px;\n  margin-left: 25px;\n}\n.span2{\n  float: left;\n}\n.row{\n  width: 720px;\n  margin-left: 0px;\n  padding-top: 11px;\n  border-bottom: 3px solid;\n  padding: 5px;\n}\n.posts_all {\n  width: 200px;\n  float: left;\n  margin-left: 30px;\n}\n.list-group{\n  margin-top: 25px;\n}\n.editCategory {\n  height: 0;\n}\n.my_posts_all {\n  float: left;\n}\n.addPost {\n  width: 150px;\n  margin: 15px;\n  position: absolute;\n  bottom: 6px;\n  left: 100px;\n}\n.for_position {\n  position: relative;\n}\n.editPost {\n  height: 0;\n}\n.del_post_icon {\n  position: relative;\n  bottom: 31px;\n  left: 82px;\n  width: 12px;\n  margin-left: 5px;\n  transition: 0.25s;\n}\n.del_post_icon:hover {\n  width: 18px;\n  cursor: pointer;\n  -webkit-transform: rotate(180deg);\n  transform: rotate(360deg);\n}\n/*.bg_img{\n  background-image: url(../public/empty.gif);\n  width: 260px;\n  height: 180px;\n  background-size: 83%;\n  background-repeat: no-repeat;\n  background-position: center;\n}*/", ""]);
+exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n\ninput[type=text], input[type=password] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box;\n}\n\n/* Set a style for all buttons */\nbutton {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%;\n}\n\n/* Extra styles for the cancel button */\n.cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336;\n}\n\n/* Float cancel and signup buttons and add an equal width */\n.cancelbtn,.signupbtn {\n    float: left;\n    width: 50%;\n}\n\n/* Add padding to container elements */\n.container {\n    padding: 16px;\n}\n\n/* Clear floats */\n.clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table;\n}\n\n/* Change styles for cancel button and signup button on extra small screens */\n@media screen and (max-width: 300px) {\n    .cancelbtn, .signupbtn {\n       width: 100%;\n    }\n}\n\n.cat-list {\n  width: 200px;\n}\n.cat-delete {\n  height: 0;\n}\n.cat-all {\n  width: 200px;\n  text-align: center;\n  float: left;\n  margin: 0px 20px 20px 20px;\n}\n\n.add-something {\n  width: 120px;\n  float: right; \n  margin-right: 75px;\n}\n#inputik {\n  width: 200px;\n}\n.del-icon {\n  position: relative;\n  bottom: 31px;\n  left: 82px;\n  width: 13px;\n}\n.edit-icon {\n  position: relative;\n  bottom: 31px;\n  left: 64px;\n  width: 14px;\n}\n.del-icon:hover {\n  background: black;\n  cursor: pointer;\n}\n.edit-icon:hover {\n  background: black;\n  cursor: pointer;\n}\n.edit-post-icon {\n  position: relative;\n  bottom: 31px;\n  transition: 0.25s;\n  left: 64px;\n  width: 12px;\n}\n.edit-post-icon:hover {\n  width: 18px;\n  cursor: pointer;\n  -webkit-transform: rotate(360deg);\n  transform: rotate(360deg);\n}\n#mine {\n  height: 250px;\n  float: left;\n  margin-bottom: 75px;\n}\n.thumbnail>img {\n    margin: 0!important;\n}\n.span6{\n  float: left;\n  width: 276px;\n  margin-left: 25px;\n}\n.span2{\n  float: left;\n}\n.row{\n  width: 720px;\n  margin-left: 0px;\n  padding-top: 11px;\n  border-bottom: 3px solid;\n  padding: 5px;\n}\n.posts-all {\n  width: 200px;\n  float: left;\n  margin-left: 30px;\n}\n.list-group{\n  margin-top: 25px;\n}\n.editCategory {\n  height: 0;\n}\n.my-posts-all {\n  float: left;\n}\n.addPost {\n  width: 150px;\n  margin: 15px;\n  position: absolute;\n  bottom: 6px;\n  left: 100px;\n}\n.for-position {\n  position: relative;\n}\n.editPost {\n  height: 0;\n}\n.del-post-icon {\n  position: relative;\n  bottom: 31px;\n  left: 82px;\n  width: 12px;\n  margin-left: 5px;\n  transition: 0.25s;\n}\n.del-post-icon:hover {\n  width: 18px;\n  cursor: pointer;\n  -webkit-transform: rotate(180deg);\n  transform: rotate(360deg);\n}\n/*.bg-img{\n  background-image: url(../public/empty.gif);\n  width: 260px;\n  height: 180px;\n  background-size: 83%;\n  background-repeat: no-repeat;\n  background-position: center;\n}*/", ""]);
 
 // exports
 
@@ -34918,7 +34918,7 @@ var Register = function (_Component) {
 		_this.handleChangeName = _this.handleChangeName.bind(_this);
 		_this.handleChangeEmail = _this.handleChangeEmail.bind(_this);
 		_this.handleChangePass = _this.handleChangePass.bind(_this);
-		_this.handleChangeConfirm_pass = _this.handleChangeConfirm_pass.bind(_this);
+		_this.handleChangeConfirmPass = _this.handleChangeConfirmPass.bind(_this);
 		_this.handleSubmit = _this.handleSubmit.bind(_this);
 		return _this;
 	}
@@ -34945,8 +34945,8 @@ var Register = function (_Component) {
 			});
 		}
 	}, {
-		key: 'handleChangeConfirm_pass',
-		value: function handleChangeConfirm_pass(e) {
+		key: 'handleChangeConfirmPass',
+		value: function handleChangeConfirmPass(e) {
 			this.setState({
 				password_confirmation: e.target.value
 			});
@@ -35011,7 +35011,7 @@ var Register = function (_Component) {
 						'Repeat Password'
 					)
 				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', placeholder: 'Repeat Password', value: this.state.password_confirmation, onChange: this.handleChangeConfirm_pass, name: 'password_confirmation', required: true }),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', placeholder: 'Repeat Password', value: this.state.password_confirmation, onChange: this.handleChangeConfirmPass, name: 'password_confirmation', required: true }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox' }),
 				' Remember me',
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -35117,7 +35117,7 @@ var Categories = function (_Component) {
 		value: function render() {
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
-				{ className: 'cat_all' },
+				{ className: 'cat-all' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'h3',
 					null,
@@ -35129,7 +35129,7 @@ var Categories = function (_Component) {
 					this.state.categories.map(function (value, index) {
 						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							'a',
-							{ className: 'list-group-item cat_list', key: index },
+							{ className: 'list-group-item cat-list', key: index },
 							value.title
 						);
 					})
@@ -35199,7 +35199,7 @@ var Posts = function (_Component) {
 			var posts = this.state.posts;
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
-				{ className: 'posts_all' },
+				{ className: 'posts-all' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'h3',
 					null,
@@ -35224,7 +35224,7 @@ var Posts = function (_Component) {
 										{ className: 'span2' },
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 											'a',
-											{ href: '#', className: 'thumbnail bg_img' },
+											{ href: '#', className: 'thumbnail bg-img' },
 											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { width: '260', height: '180', src: src })
 										)
 									),
@@ -35238,12 +35238,12 @@ var Posts = function (_Component) {
 										),
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 											'p',
-											{ className: 'p_1' },
+											{ className: 'p-1' },
 											value.text
 										),
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 											'p',
-											{ id: 'p_2' },
+											{ id: 'p-2' },
 											'#Category : ',
 											value.category.title
 										)
@@ -35359,7 +35359,7 @@ var MyPosts = function (_Component) {
 			var posts = this.state.posts;
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
-				{ className: 'my_posts_all' },
+				{ className: 'my-posts-all' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'h3',
 					null,
@@ -35385,7 +35385,7 @@ var MyPosts = function (_Component) {
 										{ className: 'span2' },
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 											'a',
-											{ href: '#', className: 'thumbnail bg_img' },
+											{ href: '#', className: 'thumbnail bg-img' },
 											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { width: '260', height: '180', src: src })
 										)
 									),
@@ -35399,12 +35399,12 @@ var MyPosts = function (_Component) {
 										),
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 											'p',
-											{ className: 'p_1' },
+											{ className: 'p-1' },
 											value.text
 										),
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 											'p',
-											{ id: 'p_2' },
+											{ id: 'p-2' },
 											'#Category : ',
 											value.category.title
 										)
@@ -35478,22 +35478,22 @@ var AddPost = function (_Component) {
             image: '',
             new_post: []
         };
-        _this.get_post_name = _this.get_post_name.bind(_this);
-        _this.get_post_text = _this.get_post_text.bind(_this);
-        _this.get_post_image = _this.get_post_image.bind(_this);
+        _this.getPostName = _this.getPostName.bind(_this);
+        _this.getPostText = _this.getPostText.bind(_this);
+        _this.getPostImage = _this.getPostImage.bind(_this);
         _this.changeSelect = _this.changeSelect.bind(_this);
         _this.submitForm = _this.submitForm.bind(_this);
         return _this;
     }
 
     _createClass(AddPost, [{
-        key: 'get_post_name',
-        value: function get_post_name(e) {
+        key: 'getPostName',
+        value: function getPostName(e) {
             this.setState({ post_name: e.target.value });
         }
     }, {
-        key: 'get_post_text',
-        value: function get_post_text(e) {
+        key: 'getPostText',
+        value: function getPostText(e) {
             this.setState({ post_text: e.target.value });
         }
     }, {
@@ -35502,8 +35502,8 @@ var AddPost = function (_Component) {
             this.setState({ selected_category: e.target.value });
         }
     }, {
-        key: 'get_post_image',
-        value: function get_post_image(e) {
+        key: 'getPostImage',
+        value: function getPostImage(e) {
             this.setState({ image: e.target.files[0] });
         }
     }, {
@@ -35513,12 +35513,12 @@ var AddPost = function (_Component) {
 
             e.preventDefault();
             var data = new FormData();
-            data.append('post_title', this.state.post_name);
+            data.append('title', this.state.post_name);
             data.append('text', this.state.post_text);
-            data.append('cat_name', this.state.selected_category);
+            data.append('category_id', this.state.selected_category);
             data.append('image', this.state.image);
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/add_post', data).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts', data).then(function (response) {
                 _this2.setState({ new_post: response.data.added_post });
                 _this2.props.addPost(_this2.state.new_post);
             });
@@ -35539,10 +35539,10 @@ var AddPost = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'for_position' },
+                { className: 'for-position' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: ' addPost', 'data-toggle': 'modal', 'data-target': '#add_post_modal' },
+                    { className: ' addPost', 'data-toggle': 'modal', 'data-target': '#add-post-modal' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'button',
                         { type: 'button', className: 'btn btn-success' },
@@ -35550,11 +35550,11 @@ var AddPost = function (_Component) {
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__modals_AddPostModal__["a" /* default */], {
-                    get_post_image: this.get_post_image,
+                    getPostImage: this.getPostImage,
                     show_categories: this.state.show_categories,
-                    get_post_name: this.get_post_name,
+                    getPostName: this.getPostName,
                     post_name: this.state.post_name,
-                    get_post_text: this.get_post_text,
+                    getPostText: this.getPostText,
                     post_text: this.state.post_text,
                     submitForm: this.submitForm,
                     changeSelect: this.changeSelect,
@@ -35606,7 +35606,7 @@ var AddPostModal = function (_Component) {
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'modal fade', id: 'add_post_modal', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
+                    { className: 'modal fade', id: 'add-post-modal', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'modal-dialog', role: 'document' },
@@ -35622,10 +35622,10 @@ var AddPostModal = function (_Component) {
                                     'Add Post'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'exampleInputEmail1', placeholder: 'Post',
-                                    value: this.props.post_name, onChange: this.props.get_post_name, required: true }),
+                                    value: this.props.post_name, onChange: this.props.getPostName, required: true }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'textarea',
-                                    { value: this.props.post_text, onChange: this.props.get_post_text },
+                                    { value: this.props.post_text, onChange: this.props.getPostText },
                                     ' '
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -35640,19 +35640,19 @@ var AddPostModal = function (_Component) {
                                         );
                                     })
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'image', type: 'file', id: 'image', onChange: this.props.get_post_image, className: 'form-control' })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'image', type: 'file', id: 'image', onChange: this.props.getPostImage, className: 'form-control' })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'modal-footer' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
-                                    { type: 'button', onClick: this.props.submitForm, className: 'btn btn-primary add_something', 'data-dismiss': 'modal' },
+                                    { type: 'button', onClick: this.props.submitForm, className: 'btn btn-primary add-something', 'data-dismiss': 'modal' },
                                     'Save'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
-                                    { type: 'button', className: 'btn btn-secondary add_something', 'data-dismiss': 'modal' },
+                                    { type: 'button', className: 'btn btn-secondary add-something', 'data-dismiss': 'modal' },
                                     'Cancel'
                                 )
                             )
@@ -36260,24 +36260,24 @@ var EditPost = function (_Component) {
             selected_cat: '',
             image: '',
             new_post: '',
-            data_target: '#' + _this.props.id + 'edit_post'
+            data_target: '#' + _this.props.id + 'edit-post'
         };
-        _this.get_post_name = _this.get_post_name.bind(_this);
-        _this.get_post_text = _this.get_post_text.bind(_this);
-        _this.get_post_image = _this.get_post_image.bind(_this);
+        _this.getPostName = _this.getPostName.bind(_this);
+        _this.getPostText = _this.getPostText.bind(_this);
+        _this.getPostImage = _this.getPostImage.bind(_this);
         _this.changeSelect = _this.changeSelect.bind(_this);
         _this.submitForm = _this.submitForm.bind(_this);
         return _this;
     }
 
     _createClass(EditPost, [{
-        key: 'get_post_name',
-        value: function get_post_name(e) {
+        key: 'getPostName',
+        value: function getPostName(e) {
             this.setState({ post_name: e.target.value });
         }
     }, {
-        key: 'get_post_text',
-        value: function get_post_text(e) {
+        key: 'getPostText',
+        value: function getPostText(e) {
             this.setState({ post_text: e.target.value });
         }
     }, {
@@ -36286,8 +36286,8 @@ var EditPost = function (_Component) {
             this.setState({ selected_cat: e.target.value });
         }
     }, {
-        key: 'get_post_image',
-        value: function get_post_image(e) {
+        key: 'getPostImage',
+        value: function getPostImage(e) {
             this.setState({ image: e.target.files[0] });
         }
     }, {
@@ -36304,7 +36304,7 @@ var EditPost = function (_Component) {
             data.append('id', this.props.id);
             data.append('_method', "PUT");
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/edit_post/' + this.props.id, data).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts/' + this.props.id, data).then(function (response) {
                 _this2.setState({ new_post: response.data.edited_post });
                 _this2.props.editPost(response.data.edited_post);
             });
@@ -36325,20 +36325,20 @@ var EditPost = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'for_position' },
+                { className: 'for-position' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: ' editPost', 'data-toggle': 'modal', 'data-target': this.state.data_target },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'edit_post_icon', src: 'edit.png' })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'edit-post-icon', src: 'edit.png' })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__modals_EditPostModal__["a" /* default */], {
                     post_name: this.state.post_name,
                     selected_cat: this.state.selected_cat,
                     post_text: this.state.post_text,
                     show_categories: this.state.show_categories,
-                    get_post_name: this.get_post_name,
-                    get_post_image: this.get_post_image,
-                    get_post_text: this.get_post_text,
+                    getPostName: this.getPostName,
+                    getPostImage: this.getPostImage,
+                    getPostText: this.getPostText,
                     changeSelect: this.changeSelect,
                     submitForm: this.submitForm,
                     body_id: this.props.id
@@ -36389,7 +36389,7 @@ var EditPostModal = function (_Component) {
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'modal fade', id: this.props.body_id + 'edit_post', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
+                    { className: 'modal fade', id: this.props.body_id + 'edit-post', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'modal-dialog', role: 'document' },
@@ -36405,10 +36405,10 @@ var EditPostModal = function (_Component) {
                                     'Edit Post'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'exampleInputEmail1', placeholder: 'Enter Title',
-                                    value: this.props.post_name, onChange: this.props.get_post_name }),
+                                    value: this.props.post_name, onChange: this.props.getPostName }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'textarea',
-                                    { placeholder: 'Post Text', value: this.props.post_text, onChange: this.props.get_post_text },
+                                    { placeholder: 'Post Text', value: this.props.post_text, onChange: this.props.getPostText },
                                     ' '
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
@@ -36428,19 +36428,19 @@ var EditPostModal = function (_Component) {
                                         );
                                     })
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'image', type: 'file', id: 'image', onChange: this.props.get_post_image, className: 'form-control' })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'image', type: 'file', id: 'image', onChange: this.props.getPostImage, className: 'form-control' })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'modal-footer' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
-                                    { onClick: this.props.submitForm, className: 'btn btn-primary add_something', 'data-dismiss': 'modal' },
+                                    { onClick: this.props.submitForm, className: 'btn btn-primary add-something', 'data-dismiss': 'modal' },
                                     'Save'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
-                                    { className: 'btn btn-secondary add_something', 'data-dismiss': 'modal' },
+                                    { className: 'btn btn-secondary add-something', 'data-dismiss': 'modal' },
                                     'Cancel'
                                 )
                             )
@@ -36502,7 +36502,7 @@ var DeletePost = function (_Component) {
         value: function deletePost() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/delete_post/' + this.props.id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/me/posts/' + this.props.id).then(function (response) {
                 _this2.props.deletePost(response.data.deleted_posts_id);
             });
         }
@@ -36511,11 +36511,11 @@ var DeletePost = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'post_delete' },
+                { className: 'post-delete' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'deletePost', 'data-toggle': 'modal', 'data-target': this.state.data_target },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'del_post_icon', src: 'delete.png' })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'del-post-icon', src: 'delete.png' })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__modals_DeletePostModal__["a" /* default */], { deletePost: this.deletePost, body_id: this.props.id })
             );
@@ -36584,10 +36584,10 @@ var DeletePostModal = function (_Component) {
                                 'p',
                                 null,
                                 'Remove a Post ',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'delete_post' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'delete-post' }),
                                 ' ?'
                             ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', id: 'delete_click', onClick: this.props.deletePost, value: 'Yes', 'data-dismiss': 'modal' }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', id: 'delete-click', onClick: this.props.deletePost, value: 'Yes', 'data-dismiss': 'modal' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
                                 { type: 'button', 'data-dismiss': 'modal' },
@@ -36655,34 +36655,33 @@ var MyCategories = function (_Component) {
     _createClass(MyCategories, [{
         key: 'addCategory',
         value: function addCategory(category) {
-            var categories = this.state.my_categories;
-            console.log(categories);
-            categories.push(category);
-            this.setState({ my_categories: categories });
+            var my_categories = this.state.my_categories;
+            my_categories.push(category);
+            this.setState({ my_categories: my_categories });
             this.props.addCategory(category);
         }
     }, {
         key: 'deleteCategory',
         value: function deleteCategory(category) {
-            var categories = this.state.my_categories;
-            categories.map(function (value, index) {
+            var my_categories = this.state.my_categories;
+            my_categories.map(function (value, index) {
                 if (value.id == category) {
-                    categories.splice(index, 1);
+                    my_categories.splice(index, 1);
                 }
             });
-            this.setState({ my_categories: categories });
+            this.setState({ my_categories: my_categories });
             this.props.deleteCategory(category);
         }
     }, {
         key: 'editCategory',
         value: function editCategory(category) {
-            var categories = this.state.my_categories;
-            categories.map(function (val, index) {
+            var my_categories = this.state.my_categories;
+            my_categories.map(function (val, index) {
                 if (val.id == category.id) {
                     val.title = category.title;
                 }
             });
-            this.setState({ my_categories: categories });
+            this.setState({ my_categories: my_categories });
             this.props.editCategory(category);
         }
     }, {
@@ -36704,7 +36703,7 @@ var MyCategories = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'cat_all' },
+                { className: 'cat-all' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'h3',
                     null,
@@ -36719,7 +36718,7 @@ var MyCategories = function (_Component) {
                             { key: index, className: 'div' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'cat_name' },
+                                { className: 'cat-name' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
                                     { to: '#', className: 'list-group-item' },
@@ -36731,7 +36730,7 @@ var MyCategories = function (_Component) {
                                 deleteCategory: _this3.deleteCategory
                             }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__EditCategories__["a" /* default */], {
-                                oldName: value.title,
+                                old_name: value.title,
                                 id: value.id,
                                 editCategory: _this3.editCategory
                             })
@@ -36791,14 +36790,14 @@ var AddCategories = function (_Component) {
             cat_name: '',
             new_cat: ''
         };
-        _this.get_cat_name = _this.get_cat_name.bind(_this);
+        _this.getCatName = _this.getCatName.bind(_this);
         _this.submitForm = _this.submitForm.bind(_this);
         return _this;
     }
 
     _createClass(AddCategories, [{
-        key: 'get_cat_name',
-        value: function get_cat_name(e) {
+        key: 'getCatName',
+        value: function getCatName(e) {
             this.setState({ cat_name: e.target.value });
         }
     }, {
@@ -36807,7 +36806,7 @@ var AddCategories = function (_Component) {
             var _this2 = this;
 
             e.preventDefault();
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/add_category', { title: this.state.cat_name }).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/add_category', { title: this.state.cat_name }).then(function (response) {
                 _this2.setState({ new_cat: response.data.added_category });
                 _this2.props.addCategory(_this2.state.new_cat);
             });
@@ -36823,7 +36822,7 @@ var AddCategories = function (_Component) {
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: ' addCategory', 'data-toggle': 'modal', 'data-target': '#add_cat_modal' },
+                        { className: ' addCategory', 'data-toggle': 'modal', 'data-target': '#add-cat-modal' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'button',
                             { type: 'button', className: 'btn btn-success' },
@@ -36832,7 +36831,7 @@ var AddCategories = function (_Component) {
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__modals_AddCategoryModal__["a" /* default */], {
-                    get_cat_name: this.get_cat_name,
+                    getCatName: this.getCatName,
                     cat_name: this.state.cat_name,
                     submitForm: this.submitForm
                 })
@@ -36882,7 +36881,7 @@ var AddCategoryModal = function (_Component) {
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'modal fade', id: 'add_cat_modal', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
+                    { className: 'modal fade', id: 'add-cat-modal', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'modal-dialog', role: 'document' },
@@ -36898,19 +36897,19 @@ var AddCategoryModal = function (_Component) {
                                     'Add Category'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'exampleInputEmail1', placeholder: 'Category',
-                                    value: this.props.cat_name, onChange: this.props.get_cat_name })
+                                    value: this.props.cat_name, onChange: this.props.getCatName })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'modal-footer' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
-                                    { type: 'button', onClick: this.props.submitForm, className: 'btn btn-primary add_something', 'data-dismiss': 'modal' },
+                                    { type: 'button', onClick: this.props.submitForm, className: 'btn btn-primary add-something', 'data-dismiss': 'modal' },
                                     'Save'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
-                                    { type: 'button', className: 'btn btn-secondary add_something', 'data-dismiss': 'modal' },
+                                    { type: 'button', className: 'btn btn-secondary add-something', 'data-dismiss': 'modal' },
                                     'Cancel'
                                 )
                             )
@@ -36972,7 +36971,7 @@ var DeleteCategories = function (_Component) {
         value: function deleteCategory() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/delete_category/' + this.props.id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/me/categories/' + this.props.id).then(function (response) {
                 _this2.props.deleteCategory(response.data.deleted_cats_id);
             });
         }
@@ -36981,11 +36980,11 @@ var DeleteCategories = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'cat_delete' },
+                { className: 'cat-delete' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'deleteCategory', 'data-toggle': 'modal', 'data-target': this.state.data_target },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'del_icon', src: 'delete.png' })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'del-icon', src: 'delete.png' })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__modals_DeleteCategoryModal__["a" /* default */], {
                     deleteCategory: this.deleteCategory,
@@ -37057,10 +37056,10 @@ var DeleteCategoryModal = function (_Component) {
                                 'p',
                                 null,
                                 'Remove a category ',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'delete_category' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'delete-category' }),
                                 ' ?'
                             ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', id: 'delete_click', onClick: this.props.deleteCategory, value: 'Yes', 'data-dismiss': 'modal' }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', id: 'delete-click', onClick: this.props.deleteCategory, value: 'Yes', 'data-dismiss': 'modal' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
                                 { type: 'button', 'data-dismiss': 'modal' },
@@ -37117,7 +37116,7 @@ var EditCategories = function (_Component) {
             name: '',
             category_name: '',
             data_target: '#' + _this.props.id + 'edit',
-            oldName: ''
+            old_name: ''
         };
         _this.handleUpdate = _this.handleUpdate.bind(_this);
         _this.getName = _this.getName.bind(_this);
@@ -37128,37 +37127,37 @@ var EditCategories = function (_Component) {
         key: 'getName',
         value: function getName(e) {
             this.setState({ name: e.target.value });
-            this.setState({ oldName: e.target.value });
+            this.setState({ old_name: e.target.value });
         }
     }, {
         key: 'handleUpdate',
         value: function handleUpdate() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/edit_category/' + this.props.id, { 'title': this.state.name }).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/me/categories/' + this.props.id, { 'title': this.state.name }).then(function (response) {
                 _this2.props.editCategory(response.data.msg[0]);
             });
         }
     }, {
         key: 'componentWillMount',
         value: function componentWillMount() {
-            this.setState({ oldName: this.props.oldName });
+            this.setState({ old_name: this.props.old_name });
         }
     }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'cat_edit' },
+                { className: 'cat-edit' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'editCategory', 'data-toggle': 'modal', 'data-target': this.state.data_target },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'edit_icon', src: 'edit.png' })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'edit-icon', src: 'edit.png' })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__modals_EditCategoryModal__["a" /* default */], {
                     body_id: this.props.id,
                     getName: this.getName,
-                    oldName: this.state.oldName,
+                    old_name: this.state.old_name,
                     name: this.state.name,
                     handleUpdate: this.handleUpdate
                 })
@@ -37224,8 +37223,8 @@ var EditCategoryModal = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'modal-body', id: this.props.body_id },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.props.oldName, onChange: this.props.getName, id: 'title', name: 'title' }),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', onClick: this.props.handleUpdate, value: 'Update', id: 'edit_click', 'data-dismiss': 'modal' }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.props.old_name, onChange: this.props.getName, id: 'title', name: 'title' }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', onClick: this.props.handleUpdate, value: 'Update', id: 'edit-click', 'data-dismiss': 'modal' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
                                 { type: 'button', 'data-dismiss': 'modal' },

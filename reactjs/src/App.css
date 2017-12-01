@@ -78,20 +78,20 @@ button {
     }
 }
 
-.cat_list {
+.cat-list {
   width: 200px;
 }
-.cat_delete {
+.cat-delete {
   height: 0;
 }
-.cat_all {
+.cat-all {
   width: 200px;
   text-align: center;
   float: left;
   margin: 0px 20px 20px 20px;
 }
 
-.add_something {
+.add-something {
   width: 120px;
   float: right; 
   margin-right: 75px;
@@ -99,34 +99,34 @@ button {
 #inputik {
   width: 200px;
 }
-.del_icon {
+.del-icon {
   position: relative;
   bottom: 31px;
   left: 82px;
   width: 13px;
 }
-.edit_icon {
+.edit-icon {
   position: relative;
   bottom: 31px;
   left: 64px;
   width: 14px;
 }
-.del_icon:hover {
+.del-icon:hover {
   background: black;
   cursor: pointer;
 }
-.edit_icon:hover {
+.edit-icon:hover {
   background: black;
   cursor: pointer;
 }
-.edit_post_icon {
+.edit-post-icon {
   position: relative;
   bottom: 31px;
   transition: 0.25s;
   left: 64px;
   width: 12px;
 }
-.edit_post_icon:hover {
+.edit-post-icon:hover {
   width: 18px;
   cursor: pointer;
   -webkit-transform: rotate(360deg);
@@ -155,7 +155,7 @@ button {
   border-bottom: 3px solid;
   padding: 5px;
 }
-.posts_all {
+.posts-all {
   width: 200px;
   float: left;
   margin-left: 30px;
@@ -166,7 +166,7 @@ button {
 .editCategory {
   height: 0;
 }
-.my_posts_all {
+.my-posts-all {
   float: left;
 }
 .addPost {
@@ -176,13 +176,13 @@ button {
   bottom: 6px;
   left: 100px;
 }
-.for_position {
+.for-position {
   position: relative;
 }
 .editPost {
   height: 0;
 }
-.del_post_icon {
+.del-post-icon {
   position: relative;
   bottom: 31px;
   left: 82px;
@@ -190,13 +190,13 @@ button {
   margin-left: 5px;
   transition: 0.25s;
 }
-.del_post_icon:hover {
+.del-post-icon:hover {
   width: 18px;
   cursor: pointer;
   -webkit-transform: rotate(180deg);
   transform: rotate(360deg);
 }
-/*.bg_img{
+/*.bg-img{
   background-image: url(../public/empty.gif);
   width: 260px;
   height: 180px;

@@ -13,21 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/me', function (Request $request) {
     return $request->user();
 });
 Route::post('/register', 'Api\AuthController@Register');
 Route::post('/login', 'Api\AuthController@login');
 Route::get('/logout', 'Api\AuthController@logout');
 
-Route::get('/categories', 'Api\CategoriesController@all_categories');
-Route::get('/me/categories', 'Api\CategoriesController@users_categories');
-Route::post('/add_category', 'Api\CategoriesController@store');
-Route::delete('/delete_category/{id}', 'Api\CategoriesController@destroy');
-Route::put('/edit_category/{id}', 'Api\CategoriesController@update');
+Route::get('/categories', 'Api\CategoriesController@allCategories');
+Route::get('/me/categories', 'Api\CategoriesController@usersCategories');
+Route::post('/me/categories', 'Api\CategoriesController@store');
+Route::delete('/me/categories/{id}', 'Api\CategoriesController@destroy');
+Route::put('/me/categories/{id}', 'Api\CategoriesController@update');
 
-Route::get('/posts', 'Api\PostsController@all_posts');
-Route::get('/me/posts', 'Api\PostsController@users_posts');
-Route::post('/add_post', 'Api\PostsController@store');
-Route::delete('/delete_post/{id}', 'Api\PostsController@destroy');
-Route::put('/edit_post/{id}', 'Api\PostsController@update');
+Route::get('/posts', 'Api\PostsController@allPosts');
+Route::get('/me/posts', 'Api\PostsController@usersPosts');
+Route::post('/me/posts', 'Api\PostsController@store');
+Route::delete('/me/posts/{id}', 'Api\PostsController@destroy');
+Route::put('/me/posts/{id}', 'Api\PostsController@update');

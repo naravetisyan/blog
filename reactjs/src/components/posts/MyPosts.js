@@ -52,7 +52,7 @@ export default class MyPosts extends Component {
   	render() {
   		let posts = this.state.posts;
         return (
-			<div className="my_posts_all">
+			<div className="my-posts-all">
 				<h3>My Posts</h3>
 				<div className="list-group">
 					<AddPost addPost={this.addPost}/>
@@ -64,14 +64,14 @@ export default class MyPosts extends Component {
 									<div id="mine">
 										<div className="row">
 											<div className="span2" >
-												<a href="#" className="thumbnail bg_img">
+												<a href="#" className="thumbnail bg-img">
 												<img width="260" height="180" src={src}/>
 												</a>
 											</div>
 											<div className="span6"> 
 												<h3>{value.title}</h3>     
-												<p className="p_1">{value.text}</p>
-												<p id="p_2">
+												<p className="p-1">{value.text}</p>
+												<p id="p-2">
 													#Category : {value.category.title}   
 												</p>
 											</div>

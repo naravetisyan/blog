@@ -16,33 +16,33 @@ export default class AddPost extends Component {
             image: '',
             new_post: []
         };
-        this.get_post_name = this.get_post_name.bind(this);
-        this.get_post_text = this.get_post_text.bind(this);
-        this.get_post_image = this.get_post_image.bind(this);
+        this.getPostName = this.getPostName.bind(this);
+        this.getPostText = this.getPostText.bind(this);
+        this.getPostImage = this.getPostImage.bind(this);
         this.changeSelect = this.changeSelect.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
-    get_post_name(e) {
+    getPostName(e) {
         this.setState({post_name: e.target.value});
     }
-    get_post_text(e) {
+    getPostText(e) {
         this.setState({post_text: e.target.value});
     }
     changeSelect(e) {
         this.setState({selected_category: e.target.value});
     }
-    get_post_image(e) {
+    getPostImage(e) {
         this.setState({image: e.target.files[0]});
     }
     submitForm(e) {
         e.preventDefault();
         let data = new FormData();
-        data.append('post_title', this.state.post_name);
+        data.append('title', this.state.post_name);
         data.append('text', this.state.post_text);
-        data.append('cat_name', this.state.selected_category);
+        data.append('category_id', this.state.selected_category);
         data.append('image', this.state.image);
         
-        axios.post('/api/add_post', data).then((response) => {
+        axios.post('/api/me/posts', data).then((response) => {
             this.setState({new_post: response.data.added_post})
             this.props.addPost(this.state.new_post);
         });
@@ -56,16 +56,16 @@ export default class AddPost extends Component {
     }
     render() {
         return (
-            <div className="for_position">
-                <div className=' addPost' data-toggle="modal" data-target="#add_post_modal">
+            <div className="for-position">
+                <div className=' addPost' data-toggle="modal" data-target="#add-post-modal">
                     <button type="button" className="btn btn-success">Add post</button>
                 </div>
                 <AddPostModal
-                    get_post_image={this.get_post_image}
+                    getPostImage={this.getPostImage}
                     show_categories={this.state.show_categories}
-                    get_post_name={this.get_post_name} 
+                    getPostName={this.getPostName} 
                     post_name={this.state.post_name}    
-                    get_post_text={this.get_post_text} 
+                    getPostText={this.getPostText} 
                     post_text={this.state.post_text} 
                     submitForm={this.submitForm}
                     changeSelect={this.changeSelect}

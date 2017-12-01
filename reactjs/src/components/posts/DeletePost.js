@@ -13,15 +13,15 @@ export default class DeletePost extends Component {
         this.deletePost = this.deletePost.bind(this);
     }
     deletePost(){
-        axios.delete('/api/delete_post/'+this.props.id).then((response) => {
+        axios.delete('/api/me/posts/'+this.props.id).then((response) => {
             this.props.deletePost(response.data.deleted_posts_id);
         })
     }
     render() {
         return (
-            <div className='post_delete'>     
+            <div className='post-delete'>     
                 <div className='deletePost' data-toggle="modal" data-target={this.state.data_target}>
-                    <img className="del_post_icon" src="delete.png"/>
+                    <img className="del-post-icon" src="delete.png"/>
                 </div>                      
                 <DeletePostModal deletePost={this.deletePost} body_id={this.props.id}/>
             </div>          

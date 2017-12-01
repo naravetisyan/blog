@@ -14,18 +14,18 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'post_title' => 'required|max:255',
+            'title' => 'required|max:255',
             'text' => 'required',
-            'cat_name' => 'required|max:255'
+            'category_id' => 'required|max:255'
         ];
     }
 
    	public function messages()
    	{
         return [
-            'post_title.required' => 'Post Title field is required!',
+            'title.required' => 'Post Title field is required!',
             'text.required' => 'Text Field is required!',
-            'cat_name.required' => 'Category Name is required!',
+            'category_id.required' => 'Category Name is required!',
         ];
     }
 

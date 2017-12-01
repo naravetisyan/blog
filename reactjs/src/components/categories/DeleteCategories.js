@@ -13,15 +13,15 @@ export default class DeleteCategories extends Component {
         this.deleteCategory = this.deleteCategory.bind(this);
     }
     deleteCategory(){
-        axios.delete('/api/delete_category/'+this.props.id).then((response) => {
+        axios.delete('/api/me/categories/'+this.props.id).then((response) => {
             this.props.deleteCategory(response.data.deleted_cats_id);
         })
     }
     render() {
         return (
-            <div className='cat_delete'>     
+            <div className='cat-delete'>     
                 <div className='deleteCategory' data-toggle="modal" data-target={this.state.data_target}>
-                    <img className="del_icon" src="delete.png"/>
+                    <img className="del-icon" src="delete.png"/>
                 </div>                      
                 <DeleteCategoryModal 
                     deleteCategory={this.deleteCategory} 

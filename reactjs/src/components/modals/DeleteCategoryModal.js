@@ -11,8 +11,8 @@ export default class DeleteCategoryModal extends Component {
                             <h4 className="modal-title">Delete Category</h4>
                         </div>
                         <div className="modal-body">
-                            <p>Remove a category <span id='delete_category'></span> ?</p>
-                            <input type="submit" id='delete_click' onClick={this.props.deleteCategory} value="Yes" data-dismiss="modal" /> 
+                            <p>Remove a category <span id='delete-category'></span> ?</p>
+                            <input type="submit" id='delete-click' onClick={this.props.deleteCategory} value="Yes" data-dismiss="modal" /> 
                             <button type="button" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>

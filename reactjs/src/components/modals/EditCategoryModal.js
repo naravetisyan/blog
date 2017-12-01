@@ -12,8 +12,8 @@ export default class EditCategoryModal extends Component {
                             <h4 className="modal-title">Update Category</h4>
                         </div>
                         <div className="modal-body" id={this.props.body_id}>   
-                            <input type="text"  value={this.props.oldName} onChange={this.props.getName} id="title" name="title" />
-                            <input type="submit" onClick={this.props.handleUpdate} value="Update" id="edit_click" data-dismiss="modal" />
+                            <input type="text"  value={this.props.old_name} onChange={this.props.getName} id="title" name="title" />
+                            <input type="submit" onClick={this.props.handleUpdate} value="Update" id="edit-click" data-dismiss="modal" />
                             <button type="button" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>

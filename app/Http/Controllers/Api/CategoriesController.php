@@ -2,7 +2,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use Auth;
 use App\Category;
@@ -14,13 +13,13 @@ class CategoriesController extends Controller
         $this->middleware('auth');
     }
 
-    public function all_categories()
+    public function allCategories()
     {   
         $categories = Category::all();
         return response()->json(['categories' => $categories], 200);
     }
 
-    public function users_categories()
+    public function usersCategories()
     {   
         $users_categories = Category::where('user_id', Auth::user()->id)->get();
         return response()->json(['my_categories' => $users_categories], 200);
@@ -33,11 +32,8 @@ class CategoriesController extends Controller
         $inputs['user_id'] = $user->id;
         if ($category = $category->create($inputs)) {
             return response()->json(['added_category' => $inputs], 200);
-        }       
-        else {
-            return response()->json(['added_category' => 'Something went wrong!']);
-
         }
+        return response()->json(['added_category' => 'Something went wrong!']);
     }
 
     public function update(CategoryRequest $request, $id)
@@ -48,10 +44,7 @@ class CategoriesController extends Controller
         if ($result) {
             return response()->json(['msg' => $categories_new_name]);
         }
-        else {
-            return response()->json(['msg' => 'Something went wrong!']);
-
-        }
+        return response()->json(['msg' => 'Something went wrong!']);
     }
 
     public function destroy($id)
